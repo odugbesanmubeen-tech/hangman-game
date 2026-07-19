@@ -80,9 +80,7 @@ class _HomePageState extends State<HomePage> {
     _newGame();
   }
 
-  void _newGame() async {
-    await player.play(AssetSource('audio/lasa.mp3'));
-    
+  void _newGame() {
     secretWord = words[Random().nextInt(words.length)].toUpperCase();
     guessedLetters.clear();
     wrongGuesses = 0;
@@ -93,13 +91,18 @@ class _HomePageState extends State<HomePage> {
     if (_isGameOver()) return;
     if (guessedLetters.contains(letter)) return;
 
-    // await player.play(AssetSource('audio/lasa.mp3'));
+    //
     setState(() {
       guessedLetters.add(letter);
       if (!secretWord.contains(letter)) {
         wrongGuesses++;
       }
     });
+    await player.play(AssetSource('audio/lasa.mp3'));
+
+    if (_isLose()) {
+      await player.play(AssetSource('audio/laba.mp3'));
+    }
   }
 
   bool _isWin() {

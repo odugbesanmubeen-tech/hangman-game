@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hangman_game/splashscreen.dart';
-import 'homepage.dart';
+
 
 void main() {
   runApp(const MyApp());

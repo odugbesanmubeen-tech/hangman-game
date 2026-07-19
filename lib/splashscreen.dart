@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             // Your logo/image
             const CircleAvatar(
               radius: 70,
-              backgroundImage: AssetImage("asset/images/lasa.jpg"),
+              backgroundImage: AssetImage("assets/images/lasa.jpg"),
             ),
 
             const SizedBox(height: 25),
